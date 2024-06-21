@@ -1,0 +1,110 @@
+/*? global clearing */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    background-color: #222222;
+    color: white;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    border: 2px solid white;
+    padding: 12px;
+}
+
+.content:hover {
+    background-color: aqua;
+    color: black;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+.bar-top {
+    height: 10px;
+    width: 100%;
+    background-color: tomato;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: progress-horizontal, progress-color;
+    animation-timeline: scroll();
+    transform-origin: 0%;
+}
+
+.bar-bottom {
+    height: 10px;
+    width: 100%;
+    background-color: tomato;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    animation: progress-horizontal, progress-color;
+    animation-timeline: scroll();
+    transform-origin: 100%;
+}
+
+.bar-left {
+    height: 100%;
+    width: 10px;
+    background-color: tomato;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    animation: progress-vertikal, progress-color;
+    animation-timeline: scroll();
+    transform-origin: 0 100%;
+}
+.bar-right {
+    height: 100%;
+    width: 10px;
+    background-color: tomato;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    animation: progress-vertikal, progress-color;
+    animation-timeline: scroll();
+    transform-origin: 100% 0;
+}
+
+@keyframes progress-horizontal {
+    0%  {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes progress-vertikal {
+    0%  {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes progress-color {
+    0% {
+        background-color: tomato;
+    }
+    50% {
+        background-color: gold;
+    }
+    100% {
+        background-color: aqua;
+    }
+}
